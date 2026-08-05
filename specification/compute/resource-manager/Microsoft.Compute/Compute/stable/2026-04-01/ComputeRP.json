@@ -15572,29 +15572,7 @@
     "DiskApiVersion": {
       "type": "string",
       "description": "Specifies the Disk API version used when applying additionalDiskProperties to managed disks. The value must be in the format YYYY-MM-DD.",
-      "enum": [
-        "2025-01-02",
-        "2026-03-02",
-        "2026-07-02"
-      ],
-      "x-ms-enum": {
-        "name": "DiskApiVersion",
-        "modelAsString": true,
-        "values": [
-          {
-            "name": "2025-01-02",
-            "value": "2025-01-02"
-          },
-          {
-            "name": "2026-03-02",
-            "value": "2026-03-02"
-          },
-          {
-            "name": "2026-07-02",
-            "value": "2026-07-02"
-          }
-        ]
-      }
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
     },
     "DiskAvailabilityPolicy": {
       "type": "object",

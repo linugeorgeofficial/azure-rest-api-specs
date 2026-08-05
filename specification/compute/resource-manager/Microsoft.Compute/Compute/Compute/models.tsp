@@ -318,15 +318,8 @@ union NetworkInterfaceAuxiliarySku {
  * Specifies the Disk API version used when applying additionalDiskProperties to managed disks. The value must be in the format YYYY-MM-DD.
  */
 @added(Versions.v2026_04_01)
-union DiskApiVersion {
-  string,
-  #suppress "@azure-tools/typespec-azure-core/documentation-required" "Version string values"
-  `2025-01-02`: "2025-01-02",
-  #suppress "@azure-tools/typespec-azure-core/documentation-required" "Version string values"
-  `2026-03-02`: "2026-03-02",
-  #suppress "@azure-tools/typespec-azure-core/documentation-required" "Version string values"
-  `2026-07-02`: "2026-07-02",
-}
+@pattern("^[0-9]{4}-[0-9]{2}-[0-9]{2}$")
+scalar DiskApiVersion extends string;
 
 /**
  * specifies the Microsoft.Network API version used when creating networking resources in the Network Interface Configurations
